@@ -66,8 +66,7 @@ async def send_q(chat_id, ctx):
     quiz = STATE['quiz']
     q = quiz['qs'][quiz['idx']]
     kb = [[InlineKeyboardButton('A', callback_data='a0')], [InlineKeyboardButton('B', callback_data='a1')], [InlineKeyboardButton('C', callback_data='a2')]]
-    await ctx.bot.send_message(chat_id, f"Q{quiz['idx']+1}/7
-{q['q']}", reply_markup=InlineKeyboardMarkup(kb))
+    await ctx.bot.send_message(chat_id, f"Q{quiz['idx']+1}/7\n{q['q']}", reply_markup=InlineKeyboardMarkup(kb))
 
 async def answer(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     data = update.callback_query.data
